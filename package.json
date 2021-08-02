@@ -1,0 +1,13 @@
+{
+  "name": "umich-lib-design-system-website",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "astro dev",
+    "build": "astro build"
+  },
+  "devDependencies": {
+    "astro": "^0.18.5",
+    "googleapis": "^83.0.0"
+  }
+}
