@@ -1,9 +1,8 @@
 backend:
-  name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  name: github
+  repo: mlibrary/design-system.lib.umich.edu
 
-# Uncomment below to enable drafts
-# publish_mode: editorial_workflow
+publish_mode: editorial_workflow
 
 media_folder: 'static/img' # Media files will be stored in the repo under images/uploads
 
