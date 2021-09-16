@@ -7,7 +7,7 @@
     "watch": "npx eleventy --watch",
     "serve": "npx eleventy --serve",
     "debug": "DEBUG=* npx eleventy",
-    "start": "npm run watch"
+    "start": "npm run serve"
   },
   "repository": {
     "type": "git",

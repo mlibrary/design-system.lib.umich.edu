@@ -1,6 +1,5 @@
 <!doctype html>
 <html {% if section %} data-current="{{ section }}"{% endif %} lang="en">
-
 	{% include "components/head.njk" %}
 
 	<body>
@@ -8,7 +7,53 @@
     <m-website-header name="Design System"></m-website-header>
 
 		<main class="viewport-container">
-			{{ layoutContent | safe }}
+      <div class="page">
+        <nav aria-label="breadcrumb" class="breadcrumbs">
+          <ol>
+            <li>
+              <a href="https://www.lib.umich.edu/">Home</a>
+            </li>
+            <li>
+              <a href="" aria-current="page">TODO</a>
+            </li>
+          </ol>
+        </nav>
+        <nav aria="secondary" class="menu-nav">
+          <ol>
+            <li>
+              <a href="#">Our Organization</a>
+            </li>
+            <li>
+              <a href="#" aria-current="page">Mission and Values</a>
+            </li>
+            <li>
+              <a href="#">Assessment</a>
+            </li>
+            <li>
+              <a href="#">Library Council</a>
+            </li>
+          </ol>
+        </nav>
+
+        <h1 class="page-heading">{{ title }}</h1>
+
+        <div class="page-content prose">
+			    {{ layoutContent | safe }}
+        </div>
+
+        <nav aria-labelled-by="neighbors-heading" class="aside-nav">
+          <h2 class="page-sub-sub-heading visually-hidden" id="neighbors-heading">Pages</h2>
+
+          <ol>
+            {% set navPages = collections.all | eleventyNavigation %}
+            {%- for entry in navPages %}
+            <li{% if entry.url == page.url %} aria-current="page"{% endif %}>
+              <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+            </li>
+            {%- endfor %}
+          </ol>
+        </nav>
+      </div>
 		</main>
 	</body>
 </html>
