@@ -1,5 +1,5 @@
 ---
-title: An example sub page
+title: Sub page
 date: 2021-09-16T17:12:12.791Z
 permalink: /sub-page/index.html
 eleventyNavigation:
