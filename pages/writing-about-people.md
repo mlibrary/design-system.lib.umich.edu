@@ -1,7 +1,7 @@
 ---
 title: Writing About People
 date: 2021-09-16T14:06:22.711Z
-permalink: people.html
+permalink: /people.html
 eleventyNavigation:
   order: 0
   key: People
