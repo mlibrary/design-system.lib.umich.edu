@@ -4,7 +4,7 @@ date: 2021-09-16T14:06:22.711Z
 permalink: /people/index.html
 eleventyNavigation:
   order: 0
-  key: People
+  key: Writing About People
 ---
 
 We sometimes refer to our audience broadly as “students, faculty, and staff,” but it’s important to remember that within these groups are people with a wide range of experiences and needs.

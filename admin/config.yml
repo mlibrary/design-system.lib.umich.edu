@@ -23,4 +23,10 @@ collections:
         fields:
           - { label: 'Key', name: 'key', widget: 'string' }
           - { label: 'Order', name: 'order', widget: 'number', default: 0 }
+          - {
+              label: 'Parent Key',
+              name: 'parent-key',
+              widget: 'string',
+              required: false,
+            }
       - { label: 'Body', name: 'body', widget: 'markdown' }
