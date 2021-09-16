@@ -4,17 +4,11 @@
 	{% include "components/head.njk" %}
 
 	<body>
-
-		<header>
-			{% include "components/nav.njk" %}
-		</header>
+    <m-universal-header></m-universal-header>
+    <m-website-header name="Design System"></m-website-header>
 
 		<main class="viewport-container">
 			{{ layoutContent | safe }}
 		</main>
-
-		{% include "components/footer.njk" %}
-
 	</body>
-
 </html>
