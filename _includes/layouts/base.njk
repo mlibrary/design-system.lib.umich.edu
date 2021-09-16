@@ -9,19 +9,51 @@
     <main class="viewport-container">
       <div class="page">
         <nav aria-label="breadcrumb" class="breadcrumbs">
+          {% set navBreadcrumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) %}
+
+          <!-- 
+          Thoughts on using <style> inline
+          ===
+          
+          f product end modifications are made to styles
+          and mutual components, take the organization benefits of
+          CSS-in-JS learned from React Search and Public Website,
+          and put those modifications together so changes don't require
+          understanding of the file organization of the project.
+
+          This encourages contributions by increasing the usability
+          of making code changes has fewer steps and requires less
+          prior knowedge (eg, understanding codebase organization).
+
+          It's supported in all browsers and performant too.
+
+          ¯\_(ツ)_/¯
+          -->
+          <style>
+            .pages--nested {
+              li li {
+                border: none !important;
+              }
+            }
+          </style>
           <ol>
             <li>
-              <a href="/">Home</a>
+              <a href="/">Welcome</a>
             </li>
+            {%- for entry in navBreadcrumbs %}
+              <li>
+                <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+              </li>
+            {%- endfor %}
             <li>
-              <a href="" aria-current="page">{{ title }}</a>
+              <a href={page.url} aria-current="page">{{ eleventyNavigation.key }}</a>
             </li>
           </ol>
         </nav>
 
         <h1 class="page-heading">{{ title }}</h1>
 
-        <div class="page-content prose">
+        <div class="page-content prose" style="grid-area: grouping;">
           {{ layoutContent | safe }}
         </div>
 
@@ -30,23 +62,23 @@
 
           {% set navPages = collections.all | eleventyNavigation %}
           {% macro renderNavListItem(entry) -%}
-            <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
+            <li>
               <a href="{{ entry.url | url }}">{{ entry.title }}</a>
               {%- if entry.children.length -%}
                 <ul>
                   {%- for child in entry.children %}{{ renderNavListItem(child) }}
                   {% endfor -%}
-                </ul>
-              {%- endif -%}
-            </li>
-          {%- endmacro %}
+              </ul>
+            {%- endif -%}
+          </li>
+        {%- endmacro %}
 
-          <ol>
-            {%- for entry in navPages %}{{ renderNavListItem(entry) }}
-            {%- endfor -%}
-          </ol>
-        </nav>
-      </div>
-    </main>
-  </body>
+        <ol class="pages--nested">
+          {%- for entry in navPages %}{{ renderNavListItem(entry) }}
+          {%- endfor -%}
+        </ol>
+      </nav>
+    </div>
+  </main>
+</body>
 </html>
