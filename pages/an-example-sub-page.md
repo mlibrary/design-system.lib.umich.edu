@@ -5,6 +5,7 @@ permalink: /sub-page/index.html
 eleventyNavigation:
   order: 0
   key: Sub Page
-  parent-key: Writing About People
+  parent: Writing About People
 ---
+
 The parent key of this example page is "Writing About People."
