@@ -1,6 +1,17 @@
 <!doctype html>
 <html {% if section %} data-current="{{ section }}"{% endif %} lang="en">
-  {% include "components/head.njk" %}
+  <head>
+    <meta charset="utf-8">
+    <link rel="dns-prefetch" href="https://identity.netlify.com">
+    <link href="https://unpkg.com/@umich-lib/web@1/umich-lib.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ renderData.title or title or metadata.title }} | Design System</title>
+    <meta name="description" content="{{ metaDescription or renderData.metaDescription or metadata.description }}">
+    <script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <script type="module" src="https://unpkg.com/@umich-lib/web@1/dist/umich-lib/umich-lib.esm.js"></script>
+    <script nomodule src="https://unpkg.com/@umich-lib/web@1/dist/umich-lib/umich-lib.js"></script>
+  </head>
 
   <body>
     <m-universal-header></m-universal-header>
@@ -11,31 +22,6 @@
         <nav aria-label="breadcrumb" class="breadcrumbs">
           {% set navBreadcrumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) %}
 
-          <!-- 
-          Thoughts on using <style> inline
-          ===
-          
-          f product end modifications are made to styles
-          and mutual components, take the organization benefits of
-          CSS-in-JS learned from React Search and Public Website,
-          and put those modifications together so changes don't require
-          understanding of the file organization of the project.
-
-          This encourages contributions by increasing the usability
-          of making code changes has fewer steps and requires less
-          prior knowedge (eg, understanding codebase organization).
-
-          It's supported in all browsers and performant too.
-
-          ¯\_(ツ)_/¯
-          -->
-          <style>
-            .pages--nested {
-              li li {
-                border: none !important;
-              }
-            }
-          </style>
           <ol>
             <li>
               <a href="/">Welcome</a>
@@ -57,18 +43,43 @@
           {{ layoutContent | safe }}
         </div>
 
+        <!-- 
+        Thoughts FOR using <style> inline / Jon E
+        ===
+        
+        If product end modifications are made to styles
+        and mutual components, take the organization benefits of
+        CSS-in-JS learned from React Search and Public Website,
+        and put those modifications together so changes to the
+        website front end (HTML, CSS, and JS) require minimal
+        understanding of the file organization of the project.
+
+        This encourages contributions by increasing the usability
+        of making code changes since they have fewer steps and require
+        less prior knowedge (eg, understanding codebase organization).
+
+        It's supported in all browsers and performant too. ¯\_(ツ)_/¯
+        -->
+        <style>
+          .aside-nav li {
+            border: none !important;
+          }
+          .aside-nav > ol > li > a {
+            color: var(--color-pink-400) !important;
+          }
+        </style>
         <nav aria-labelled-by="neighbors-heading" class="aside-nav">
-          <h2 class="page-sub-sub-heading" id="neighbors-heading">Pages</h2>
+          <h2 class="page-sub-sub-heading visually-hidden" id="neighbors-heading">Content Map</h2>
 
           {% set navPages = collections.all | eleventyNavigation %}
           {% macro renderNavListItem(entry) -%}
             <li>
               <a href="{{ entry.url | url }}">{{ entry.title }}</a>
               {%- if entry.children.length -%}
-                <ul>
+                <ol>
                   {%- for child in entry.children %}{{ renderNavListItem(child) }}
                   {% endfor -%}
-              </ul>
+              </ol>
             {%- endif -%}
           </li>
         {%- endmacro %}
