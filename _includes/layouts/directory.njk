@@ -11,7 +11,7 @@ layout: layouts/page.njk
     <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
       <a href="{{ entry.url | url }}">
         <h3>{{ entry.title }}</h3>
-        <p>Abstract placeholder. To be written.</p>
+        <p>{{entry.excerpt}}</p>
       </a>
     </li>
   {%- endfor %}

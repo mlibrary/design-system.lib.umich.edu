@@ -1,6 +1,7 @@
 ---
 parent: Content
 title: Writing About People
+description: It’s important to remember that people have a wide range of experiences and needs.
 eleventyNavigation:
   order: 1
   key: Writing About People

@@ -15,7 +15,6 @@ collections:
     slug: '{{slug}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Abstract', name: 'abstract', widget: 'text' }
       - {
           label: 'Parent Title',
           name: 'parent',
@@ -32,4 +31,5 @@ collections:
             ],
           default: 'None',
         }
+      - { label: 'Description', name: 'description', widget: 'text' }
       - { label: 'Content', name: 'body', widget: 'markdown' }
