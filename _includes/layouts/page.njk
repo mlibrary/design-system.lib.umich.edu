@@ -30,42 +30,50 @@ section: page
     </div>
 
     <!-- 
-        Thoughts FOR using <style> inline / Jon E
-        ===
-        
-        If product end modifications are made to styles
-        and mutual components, take the organization benefits of
-        CSS-in-JS learned from React Search and Public Website,
-        and put those modifications together so changes to the
-        website front end (HTML, CSS, and JS) require minimal
-        understanding of the file organization of the project.
+    Thoughts FOR using <style> inline / Jon E
+    ===
+    
+    If product end modifications are made to styles
+    and mutual components, take the organization benefits of
+    CSS-in-JS learned from React Search and Public Website,
+    and put those modifications together so changes to the
+    website front end (HTML, CSS, and JS) require minimal
+    understanding of the file organization of the project.
 
-        This encourages contributions by increasing the usability
-        of making code changes since they have fewer steps and require
-        less prior knowedge (eg, understanding codebase organization).
+    This encourages contributions by increasing the usability
+    of making code changes since they have fewer steps and require
+    less prior knowedge (eg, understanding codebase organization).
 
-        It's supported in all browsers and performant too. ¯\_(ツ)_/¯
-        -->
+    It's supported in all browsers and performant too. ¯\_(ツ)_/¯
+    -->
     <nav aria-labelled-by="neighbors-heading" class="aside-nav">
-      <h2 class="page-sub-sub-heading visually-hidden" id="neighbors-heading">Content Map</h2>
+      <h2 class="page-sub-sub-heading visually-hidden" id="neighbors-heading">Main</h2>
 
-      {% set navPages = collections.all | eleventyNavigation %}
-      {% macro renderNavListItem(entry) -%}
-        <li>
-          <a href="{{ entry.url | url }}">{{ entry.title }}</a>
-          {%- if entry.children.length -%}
-            <ol>
-              {%- for child in entry.children %}{{ renderNavListItem(child) }}
-              {% endfor -%}
-          </ol>
-        {%- endif -%}
-      </li>
-    {%- endmacro %}
+      <style>
+        .pages--nested > li:first-child {
+          display: none; // hide the homepage
+        }
+      </style>
 
-    <ol class="pages--nested">
-      {%- for entry in navPages %}{{ renderNavListItem(entry) }}
-      {%- endfor -%}
-    </ol>
-  </nav>
-</div>
+      <ol class="pages--nested">
+        {% set navPages = collections.all | eleventyNavigation %}
+        {%- for entry in navPages %}
+          <li style="border: none; margin-bottom: var(--space-large);">
+            <a href="{{ entry.url | url }}" class="subtle-heading" style="color: var(--color-neutral-300);">{{ entry.title }}</a>
+
+            {%- if entry.children.length -%}
+              <ol>
+                {% set subPages = entry.children %}
+                {%- for subPage in subPages %}
+                  <li style="border: none;">
+                    <a href="{{ subPage.url | url }}" style="padding: var(--space-small) 0;" {% if page.url == subPage.url %} aria-current="page"{% endif %}>{{ subPage.title }}</a>
+                  </li>
+                {%- endfor -%}
+              </ol>
+            {% endif %}
+          </li>
+        {%- endfor -%}
+      </ol>
+    </nav>
+  </div>
 </main>
