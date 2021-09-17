@@ -1,4 +1,5 @@
 ---
+layout: layouts/directory.njk
 title: Reusable designs
 eleventyNavigation:
   order: 104

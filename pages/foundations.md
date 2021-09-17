@@ -1,4 +1,5 @@
 ---
+layout: layouts/directory.njk
 title: Foundations
 eleventyNavigation:
   order: 102

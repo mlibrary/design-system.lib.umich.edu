@@ -1,0 +1,18 @@
+---
+layout: layouts/page.njk
+---
+
+{% set pages = collections.all | eleventyNavigation(title) %}
+
+<h2 class="visually-hidden">Pages</h2>
+
+<ul class="page-previews" style="margin-top: var(--space-xx-large);">
+  {%- for entry in pages %}
+    <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
+      <a href="{{ entry.url | url }}">
+        <h3>{{ entry.title }}</h3>
+        <p>Abstract placeholder. To be written.</p>
+      </a>
+    </li>
+  {%- endfor %}
+</ul>
