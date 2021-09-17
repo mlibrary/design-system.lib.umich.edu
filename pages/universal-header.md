@@ -6,7 +6,7 @@ permalink: /universal-header/index.html
 eleventyNavigation:
   order: 0
   key: Universal Header
-  parent: Components
+  parent: Reusable designs
 ---
 
 TODO

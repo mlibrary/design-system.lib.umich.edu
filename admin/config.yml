@@ -14,12 +14,14 @@ collections:
     create: true
     slug: '{{slug}}'
     fields:
+      - { label: 'Document title', name: 'title', widget: 'string' }
       - {
-          label: 'Collection',
+          label: 'Navigation Parent',
           name: 'parent',
           widget: 'select',
           options:
             [
+              'None',
               'Foundations',
               'Visual elements',
               'Content',
@@ -27,7 +29,6 @@ collections:
               'Patterns',
               'About',
             ],
-          comments: 'Hello!',
+          default: 'None',
         }
-      - { label: 'Document title', name: 'title', widget: 'string' }
       - { label: 'Main content', name: 'body', widget: 'markdown' }

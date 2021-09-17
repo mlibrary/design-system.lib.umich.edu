@@ -3,4 +3,9 @@ layout: layouts/base.njk
 section: home
 ---
 
-{{ layoutContent | safe }}
+<main class="viewport-container">
+  <h1>Hello, world.</h1>
+  <p>During development of this website before we have a homepage design this landing page will render a basic sitemap.</p>
+
+  {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+</main>

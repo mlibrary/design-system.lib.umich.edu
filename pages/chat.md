@@ -6,7 +6,7 @@ permalink: /chat/index.html
 eleventyNavigation:
   order: 0
   key: Chat
-  parent: Components
+  parent: Reusable designs
 ---
 
 TODO
