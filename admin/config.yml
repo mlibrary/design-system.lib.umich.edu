@@ -14,9 +14,10 @@ collections:
     create: true
     slug: '{{slug}}'
     fields:
-      - { label: 'Document title', name: 'title', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Abstract', name: 'abstract', widget: 'text' }
       - {
-          label: 'Navigation Parent',
+          label: 'Parent Title',
           name: 'parent',
           widget: 'select',
           options:
@@ -31,4 +32,4 @@ collections:
             ],
           default: 'None',
         }
-      - { label: 'Main content', name: 'body', widget: 'markdown' }
+      - { label: 'Content', name: 'body', widget: 'markdown' }
