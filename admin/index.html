@@ -3,26 +3,21 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Document Editor | Design System</title>
+    <title>Web Document Editor | Design System</title>
 
     <link href="https://unpkg.com/@umich-lib/web@1/umich-lib.css" rel="stylesheet"/>
     <script type="module" src="https://unpkg.com/@umich-lib/web@1/dist/umich-lib/umich-lib.esm.js"></script>
     <script nomodule src="https://unpkg.com/@umich-lib/web@1/dist/umich-lib/umich-lib.js"></script>
-
-    <style>
-      .css-6o0rf-PreviewPaneContainer-ControlPaneContainer {
-        margin-top: 8rem;
-      }
-    </style>
   </head>
   <body>
-    <m-universal-header></m-universal-header>
-    <m-website-header name="Design System / Document Editor"></m-website-header>
-
     <!-- Include the script that builds the page and powers Netlify CMS -->
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
     <!-- Include Netlify Identity for authentication -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script type="module" src="/admin/preview-templates/index.js"></script>
+
+    <div style="padding: var(--space-x-small) 0; background: white; margin: var(--space-medium); border-radius: 5px; box-shadow: rgba(68, 74, 87, 0.05) 0px 2px 6px 0px, rgba(68, 74, 87, 0.1) 0px 1px 3px 0px;">
+      <m-website-header name="Web Document Editor"></m-website-header>
+    </div>
   </body>
 </html>

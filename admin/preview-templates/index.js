@@ -8,7 +8,7 @@ fetch("/")
   .then(response => response.text())
   .then(html => {
     const f = document.createElement("html");
-    f.innerHTML = html;
+    f.innerHTML = html; // IDEA: Add templates here? Make them selectable?
     Array.from(f.getElementsByTagName("link")).forEach(tag => {
       if (tag.rel == "stylesheet" && !tag.media) {
         CMS.registerPreviewStyle(tag.href);

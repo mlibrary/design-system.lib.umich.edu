@@ -10,7 +10,7 @@ section: page
 
       <ol>
         <li>
-          <a href="/">Welcome</a>
+          <a href="/">Hello</a>
         </li>
         {%- for entry in navBreadcrumbs %}
           <li>
@@ -27,6 +27,10 @@ section: page
 
     <div class="page-content prose" style="grid-area: grouping;">
       {{ layoutContent | safe }}
+
+      <p style="margin-top: 2rem;">
+        <a href="/admin/#/collections/pages/entries/{{ title | slug }}" class="button">Open Web Document Editor</a>
+      </p>
     </div>
 
     <!-- 
