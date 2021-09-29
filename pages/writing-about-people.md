@@ -13,7 +13,7 @@ We sometimes refer to our audience broadly as â€œstudents, faculty, and staff,â€
 This includes people who:
 
 * Have time pressures, are stressed, or are multitasking
-* Are not native English speakers
+* Are non-native English speakers
 * Are new to academia or university life
 * Have cognitive, visual, or motor disabilities
 * Use assistive technologies
