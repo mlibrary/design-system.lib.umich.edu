@@ -1,2 +1,6 @@
 backend:
+  repo: mlibrary/design-system.lib.umich.edu
+  branch: main
   name: git-gateway
+  api_root: https://api.github.com
+  cms_label_prefix: web-document-editor/
