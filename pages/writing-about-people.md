@@ -1,25 +1,25 @@
 ---
-parent: Content
 title: Writing About People
-description: It’s important to remember that people have a wide range of experiences and needs.
+parent: Content
+description: It’s important to remember that people have a wide range of
+  experiences and needs.
 eleventyNavigation:
   order: 1
   key: Writing About People
   parent: Content
 ---
-
 We sometimes refer to our audience broadly as “students, faculty, and staff,” but it’s important to remember that within these groups are people with a wide range of experiences and needs.
 
 This includes people who:
 
-- Have time pressures, are stressed, or are multitasking
-- Speak English as a second language
-- Are new to academia or university life
-- Have cognitive, visual, or motor disabilities
-- Use assistive technologies
-- Are new to the United States and U.S. culture
-- Are new transfer students
-- Are guests or visitors, who may not have authentication privileges
+* Have time pressures, are stressed, or are multitasking
+* Are not native English speakers
+* Are new to academia or university life
+* Have cognitive, visual, or motor disabilities
+* Use assistive technologies
+* Are new to the United States and U.S. culture
+* Are new transfer students
+* Are guests or visitors, who may not have authentication privileges
 
 One reason we use <plain language> and follow <accessibility principles> is to make sure we’re doing our best to reach everyone who wants to use our spaces and services.
 
@@ -27,9 +27,9 @@ And remember, no one person represents a group. Be careful not to make assumptio
 
 ## Best practices 
 
-- Use inclusive language
-- Recognize and eliminate racist phrases and terms
-- Write with accessibility in mind
+* Use inclusive language
+* Recognize and eliminate racist phrases and terms
+* Write with accessibility in mind
 
 ### Use inclusive language
 
