@@ -7,6 +7,7 @@ eleventyNavigation:
   order: 0
   key: Chat
   parent: Reusable designs
+description: Use the Chat component to add Ask a Librarian live chat services to your web document.
 ---
 
-TODO
+Use the Chat component to add Ask a Librarian live chat services to your web document.
