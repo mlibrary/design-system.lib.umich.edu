@@ -12,28 +12,21 @@ publish_mode: editorial_workflow
 media_folder: 'static/img' # Media files will be stored in the repo under images/uploads
 
 collections:
-  - name: 'pages'
+  - name: 'document'
     label: 'Document'
     folder: 'pages'
     create: true
     slug: '{{slug}}'
+    summary: '{{commit_date}} - {{commit_author}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - {
-          label: 'Parent Title',
+          label: 'Parent',
           name: 'parent',
-          widget: 'select',
-          options:
-            [
-              'None',
-              'Foundations',
-              'Visual elements',
-              'Content',
-              'Reusable designs',
-              'Patterns',
-              'About',
-            ],
-          default: 'None',
+          widget: 'relation',
+          collection: 'document',
+          value_field: 'name',
+          search_fields: ['name'],
         }
       - { label: 'Description', name: 'description', widget: 'text' }
       - { label: 'Content', name: 'body', widget: 'markdown' }
