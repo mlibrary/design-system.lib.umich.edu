@@ -1,3 +1,5 @@
+# Docs: https://www.netlifycms.org/docs/add-to-your-site/
+
 backend:
   repo: mlibrary/design-system.lib.umich.edu
   branch: main

@@ -16,5 +16,21 @@
     <div style="padding: var(--space-x-small) 0; background: white; margin: var(--space-medium); border-radius: 5px; box-shadow: rgba(68, 74, 87, 0.05) 0px 2px 6px 0px, rgba(68, 74, 87, 0.1) 0px 1px 3px 0px;">
       <m-website-header name="Web Document Editor"></m-website-header>
     </div>
+
+    <script>
+      if (window.netlifyIdentity) {
+        window
+          .netlifyIdentity
+          .on("init", user => {
+            if (!user) {
+              window
+                .netlifyIdentity
+                .on("login", () => {
+                  document.location.href = "/admin/";
+                });
+            }
+          });
+      }
+    </script>
   </body>
 </html>
