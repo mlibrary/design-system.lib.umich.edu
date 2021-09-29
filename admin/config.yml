@@ -25,8 +25,8 @@ collections:
           name: 'parent',
           widget: 'relation',
           collection: 'document',
-          value_field: 'name',
-          search_fields: ['name'],
+          value_field: 'title',
+          search_fields: ['title'],
         }
       - { label: 'Description', name: 'description', widget: 'text' }
       - { label: 'Content', name: 'body', widget: 'markdown' }
