@@ -6,15 +6,20 @@ layout: layouts/base.njk
   <div class="page">
     <nav aria-label="breadcrumb" class="breadcrumbs">
       {% set navBreadcrumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) %}
-
       <ol>
+        {% if navBreadcrumbs.length === 0 %}
+          <li>
+            <a href="/">Hello</a>
+          </li>
+        {% endif %}
+
         {%- for entry in navBreadcrumbs %}
           <li>
             <a href="{{ entry.url | url }}">{{ entry.title }}</a>
           </li>
         {%- endfor %}
         <li>
-          <a href="{{page.url}}" aria-current="page">{{ eleventyNavigation.key }}</a>
+          <a href="{{page.url}}" aria-current="page">{{ title }}</a>
         </li>
       </ol>
     </nav>
