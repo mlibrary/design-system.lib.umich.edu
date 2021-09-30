@@ -14,7 +14,7 @@ layout: layouts/base.njk
           </li>
         {%- endfor %}
         <li>
-          <a href={page.url} aria-current="page">{{ eleventyNavigation.key }}</a>
+          <a href="{{page.url}}" aria-current="page">{{ eleventyNavigation.key }}</a>
         </li>
       </ol>
     </nav>
