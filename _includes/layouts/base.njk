@@ -46,6 +46,16 @@
             text-decoration-color: var(--color-blue-100) !important;
             text-decoration-thickness: 2 !important;
           }
+
+          @media (max-width: 640px) {
+            .page-footer__content {
+              display: block;
+            }
+
+            .page-footer__content section:not(:last-child) {
+              margin-bottom: var(--space-xxx-large);
+            }
+          }
         </style>
 
         <div class="page-footer__content" style="min-height: 340px; grid-gap: var(--space-xxxxx-large);">
