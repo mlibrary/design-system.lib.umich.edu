@@ -15,12 +15,63 @@
   </head>
 
   <body>
-    <m-universal-header></m-universal-header>
-    <m-website-header name="Design System">
-      <div data-netlify-identity-button></div>
-    </m-website-header>
+    <style>
+      body,
+      html {
+        height: 100%;
+      }
+      body {
+        min-height: 100%;
+        display: grid;
+        grid-template-rows: auto auto 1fr auto;
+      }
+    </style>
 
-    {{ layoutContent | safe }}
+    <m-universal-header></m-universal-header>
+    <m-website-header name="Design System"></m-website-header>
+
+    <div>
+      {{ layoutContent | safe }}
+    </div>
+
+    <footer class="page-footer" style="margin-top: var(--space-xxx-large);">
+      <div class="viewport-container">
+        <div class="page-footer__content" style="min-height: 240px;">
+          <section>
+            <h2>University of Michigan Library</h2>
+            <p>913 S. University Avenue<br/>Ann Arbor, MI 48109</p>
+          </section>
+
+          <section>
+            <h2>Contributors</h2>
+            <ul>
+              <li>
+                <style>
+                  [data-netlify-identity-menu] li {
+                    display: inline;
+                    padding-right: 1rem;
+                  }
+
+                  .netlify-identity-menu a {
+                    padding-top: 0 !important;
+                  }
+                </style>
+                <div data-netlify-identity-menu></div>
+              </li>
+              <li>
+                <a href="/admin">Web Document Editor</a>
+              </li>
+            </ul>
+
+          </section>
+        </div>
+      </div>
+      <div class="page-footer__disclaimer">
+        <div class="viewport-container">
+          <p>© 2021, Regents of the University of Michigan</p>
+        </div>
+      </div>
+    </footer>
 
     <script>
       if (window.netlifyIdentity) {

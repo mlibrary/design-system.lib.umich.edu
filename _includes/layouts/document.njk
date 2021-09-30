@@ -1,6 +1,5 @@
 ---
 layout: layouts/base.njk
-section: page
 ---
 
 <main class="viewport-container">
@@ -9,9 +8,6 @@ section: page
       {% set navBreadcrumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) %}
 
       <ol>
-        <li>
-          <a href="/">Hello</a>
-        </li>
         {%- for entry in navBreadcrumbs %}
           <li>
             <a href="{{ entry.url | url }}">{{ entry.title }}</a>
@@ -27,10 +23,6 @@ section: page
 
     <div class="page-content prose" style="grid-area: grouping;">
       {{ layoutContent | safe }}
-
-      <p style="margin-top: 2rem;">
-        <a href="/admin/#/collections/pages/entries/{{ title | slug }}" class="button">Open Web Document Editor</a>
-      </p>
     </div>
 
     <!-- 
@@ -53,14 +45,8 @@ section: page
     <nav aria-labelled-by="neighbors-heading" class="aside-nav">
       <h2 class="page-sub-sub-heading visually-hidden" id="neighbors-heading">Main</h2>
 
-      <style>
-        .pages--nested > li:first-child {
-          display: none; // hide the homepage
-        }
-      </style>
-
       <ol class="pages--nested">
-        {% set navPages = collections.all | eleventyNavigation %}
+        {% set navPages = collections.all | eleventyNavigation("Hello") %}
         {%- for entry in navPages %}
           <li style="border: none; margin-bottom: var(--space-large);">
             <a href="{{ entry.url | url }}" class="subtle-heading" style="color: var(--color-neutral-300);">{{ entry.title }}</a>

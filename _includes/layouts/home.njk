@@ -13,6 +13,6 @@ section: home
 
     <h2>Sitemap</h2>
 
-    {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+    {{ collections.all | eleventyNavigation("Hello") | eleventyNavigationToHtml | safe }}
   </div>
 </main>
