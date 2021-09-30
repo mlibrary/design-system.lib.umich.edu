@@ -1,10 +1,6 @@
 ---
 title: Universal Header
 parent: Reusable designs
-eleventyNavigation:
-  order: 0
-  key: Universal Header
-  parent: Reusable designs
 ---
 
 TODO

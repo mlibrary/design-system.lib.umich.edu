@@ -2,9 +2,6 @@
 layout: layouts/home.njk
 title: Hello
 permalink: /
-eleventyNavigation:
-  key: Hello
-  order: 0
 ---
 
 This page uses a custom template.
