@@ -7,12 +7,6 @@ section: home
   <div role="presentation" class="prose">
     <h1>Hello, you.</h1>
 
-    <p>This website isn't ready to be publicly shared. There isn't enough completed yet. And before that, we're still learning if Netlify CMS and 11ty are good enough choices of tools help the design system team co-design our new documentation website.</p>
-
-    <p>Until we design a homepage this site map with service as navigation.</p>
-
-    <h2>Sitemap</h2>
-
     {{ collections.all | eleventyNavigation("Hello") | eleventyNavigationToHtml | safe }}
   </div>
 </main>
