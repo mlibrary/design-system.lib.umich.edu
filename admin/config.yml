@@ -14,7 +14,7 @@ media_folder: 'static/img' # Media files will be stored in the repo under images
 collections:
   - name: 'document'
     label: 'Document'
-    folder: 'pages'
+    folder: 'documents'
     create: true
     slug: '{{slug}}'
     summary: '{{title}} \ {{commit_author}}'
