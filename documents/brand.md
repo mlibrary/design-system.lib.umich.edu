@@ -1,5 +1,5 @@
 ---
-layout: directory.njk
+layout: layouts/directory.njk
 title: Brand
 parent: Hello
 description: Brand description.
