@@ -17,7 +17,7 @@ collections:
     folder: 'documents'
     create: true
     slug: '{{slug}}'
-    summary: '{{title}} \ {{commit_author}}'
+    summary: '{{title}} \ last edited by {{commit_author}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - {
