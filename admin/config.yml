@@ -17,7 +17,7 @@ collections:
     folder: 'pages'
     create: true
     slug: '{{slug}}'
-    summary: '{{ title }} \ {{commit_author}}'
+    summary: '{{title}} \ {{commit_author}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - {
