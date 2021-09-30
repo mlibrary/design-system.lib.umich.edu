@@ -36,10 +36,35 @@
 
     <footer class="page-footer" style="margin-top: var(--space-xxx-large);">
       <div class="viewport-container">
-        <div class="page-footer__content" style="min-height: 240px;">
+
+        <style>
+          .page-footer__content a {
+            text-decoration-color: var(--color-blue-200) !important;
+          }
+
+          .page-footer__content a:hover {
+            text-decoration-color: var(--color-blue-100) !important;
+            text-decoration-thickness: 2 !important;
+          }
+        </style>
+
+        <div class="page-footer__content" style="min-height: 340px; grid-gap: var(--space-xxxxx-large);">
           <section>
-            <h2>University of Michigan Library</h2>
-            <p>913 S. University Avenue<br/>Ann Arbor, MI 48109</p>
+            <h2>Library Design System Team</h2>
+            <ul>
+              <li>
+                <a href="/">Areas of specialty</a>
+              </li>
+              <li>
+                <a href="/">Values</a>
+              </li>
+              <li>
+                <a href="/work-notes">Work notes</a>
+              </li>
+              <li>
+                <a href="mailto:library-design-system-team@umich.edu">library-design-system-team@umich.edu</a>
+              </li>
+            </ul>
           </section>
 
           <section>
@@ -51,18 +76,16 @@
                     display: inline;
                     padding-right: 1rem;
                   }
-
-                  .netlify-identity-menu a {
-                    padding-top: 0 !important;
-                  }
                 </style>
                 <div data-netlify-identity-menu></div>
               </li>
               <li>
                 <a href="/admin">Web Document Editor</a>
               </li>
+              <li>
+                <a href="https://github.com/mlibrary/design-system">github.com/mlibrary/design-system</a>
+              </li>
             </ul>
-
           </section>
         </div>
       </div>

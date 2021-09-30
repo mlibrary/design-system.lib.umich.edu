@@ -3,7 +3,6 @@ module.exports = {
     eleventyNavigation: {
       key: data => data.title,
       parent: data => data.parent,
-      excerpt: data => data.description
     }
   }
 };
