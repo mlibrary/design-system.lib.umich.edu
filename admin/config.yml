@@ -17,7 +17,8 @@ collections:
     folder: 'documents'
     create: true
     slug: '{{slug}}'
-    summary: '{{title}} \ last edited by {{commit_author}}'
+    summary: '{{parent}} / {{title}}'
+    sortable_fields: ['title', 'commit_date', 'commit_author', 'dirname']
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - {
