@@ -1,7 +1,7 @@
 ---
 title: Inclusive Design
 parent: Foundations
-description: Testing testy
+description: oops i did it again
 ---
 Welcome to the place where we test stuff and talk about it!
 
