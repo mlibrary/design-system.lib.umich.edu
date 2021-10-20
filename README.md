@@ -44,6 +44,14 @@ Or in debug mode:
 DEBUG=* npm start
 ```
 
+### Using a local (git) backend
+
+In a root `.env` file add `PORT=8765`.
+
+```
+npx netlify-cms-proxy-server
+```
+
 ### How does this all work?
 
 We use Netlify and Eleventy for key functionality.
@@ -58,5 +66,3 @@ We use Netlify and Eleventy for key functionality.
 This is an ongoing project and I welcome contributions and suggestions! Feel free to submit a PR.
 
 If you need any help with setting up this repo, you can reach out to the design system team at [library-design-system-team@umich.edu](library-design-system-team@umich.edu).
-
-

@@ -1,5 +1,9 @@
 # Docs: https://www.netlifycms.org/docs/add-to-your-site/
 
+# when using the default proxy server port
+local_backend:
+  url: http://localhost:8765/api/v1 # .env PORT=8765
+
 backend:
   repo: mlibrary/design-system.lib.umich.edu
   branch: main
@@ -32,3 +36,14 @@ collections:
         }
       - { label: 'Description', name: 'description', widget: 'text' }
       - { label: 'Content', name: 'body', widget: 'markdown', required: false }
+      - label: 'Builder'
+        name: 'builder'
+        widget: 'list'
+        required: false
+        types:
+          - name: Markdown
+            widget: object
+            fields: [{ name: Markdown, widget: markdown }]
+          - name: Code
+            widget: object
+            fields: [{ name: Code, widget: code }]
