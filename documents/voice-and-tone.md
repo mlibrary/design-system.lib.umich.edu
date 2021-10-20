@@ -1,4 +1,4 @@
 ---
 title: Voice and tone
-parent: Brand
+parent: Foundations
 ---
