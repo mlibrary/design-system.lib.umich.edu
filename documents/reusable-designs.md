@@ -1,6 +1,6 @@
 ---
 layout: layouts/directory.njk
-title: Reusable designs
+title: Reusable Designs
 parent: Hello
-description: Reusable designs desc
+description: Reusable Designs desc
 ---

@@ -3,27 +3,7 @@ layout: layouts/base.njk
 ---
 
 <main class="viewport-container">
-  <div class="page">
-    <nav aria-label="breadcrumb" class="breadcrumbs">
-      {% set navBreadcrumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) %}
-      <ol>
-        {% if navBreadcrumbs.length === 0 %}
-          <li>
-            <a href="/">Hello</a>
-          </li>
-        {% endif %}
-
-        {%- for entry in navBreadcrumbs %}
-          <li>
-            <a href="{{ entry.url | url }}">{{ entry.title }}</a>
-          </li>
-        {%- endfor %}
-        <li>
-          <a href="{{page.url}}" aria-current="page">{{ title }}</a>
-        </li>
-      </ol>
-    </nav>
-
+  <div class="page" style="margin-top: var(--space-x-large);">
     <h1 class="page-heading">{{ title }}</h1>
 
     <div class="page-content prose" style="grid-area: grouping;">
@@ -48,24 +28,14 @@ layout: layouts/base.njk
     It's supported in all browsers and performant too. ¯\_(ツ)_/¯
     -->
     <nav aria-labelled-by="neighbors-heading" class="aside-nav">
-      <h2 class="page-sub-sub-heading visually-hidden" id="neighbors-heading">Main</h2>
+      <h2 class="subtle-heading">{{ parent }}</h2>
 
-      <ol class="pages--nested">
-        {% set navPages = collections.all | eleventyNavigation("Hello") %}
-        {%- for entry in navPages %}
-          <li style="border: none; margin-bottom: var(--space-large);">
-            <a href="{{ entry.url | url }}" class="subtle-heading" style="color: var(--color-neutral-300);">{{ entry.title }}</a>
+      {% set documents = collections.all | eleventyNavigation(parent) %}
 
-            {%- if entry.children.length -%}
-              <ol>
-                {% set subPages = entry.children %}
-                {%- for subPage in subPages %}
-                  <li style="border: none;">
-                    <a href="{{ subPage.url | url }}" style="padding: var(--space-small) 0;" {% if page.url == subPage.url %} aria-current="page"{% endif %}>{{ subPage.title }}</a>
-                  </li>
-                {%- endfor -%}
-              </ol>
-            {% endif %}
+      <ol>
+        {%- for document in documents %}
+          <li>
+            <a href="{{ document.url }}">{{ document.title }}</a>
           </li>
         {%- endfor -%}
       </ol>

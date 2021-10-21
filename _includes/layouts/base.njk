@@ -23,12 +23,28 @@
       body {
         min-height: 100%;
         display: grid;
-        grid-template-rows: auto auto 1fr auto;
+        grid-template-rows: auto auto auto 1fr auto;
       }
     </style>
 
     <m-universal-header></m-universal-header>
     <m-website-header name="Design System"></m-website-header>
+
+    <nav aria-label="main" class="menu-nav" style="margin-top: var(--space-x-small); border-bottom: solid 1px var(--color-neutral-100);">
+      {% set documents = collections.all | eleventyNavigation("Hello") %}
+      <div class="viewport-container">
+        <ol style="border: none;">
+          {%- for entry in documents %}
+            <li>
+              <a
+                href="{{ entry.url | url }}"
+                {% if page.url == entry.url %} aria-current="page"{% endif %}
+              >{{ entry.title }}</a>
+            </li>
+          {%- endfor %}
+        </ol>
+      </div>
+    </nav>
 
     <div>
       {{ layoutContent | safe }}

@@ -1,4 +1,4 @@
 ---
 title: Website Header
-parent: Reusable designs
+parent: Reusable Designs
 ---

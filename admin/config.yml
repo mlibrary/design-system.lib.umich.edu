@@ -41,9 +41,9 @@ collections:
         widget: 'list'
         required: false
         types:
-          - name: Markdown
+          - name: markdown
             widget: object
-            fields: [{ name: Markdown, widget: markdown }]
-          - name: Code
+            fields: [{ name: markdown, widget: markdown }]
+          - name: code
             widget: object
-            fields: [{ name: Code, widget: code }]
+            fields: [{ name: code, widget: code }]
