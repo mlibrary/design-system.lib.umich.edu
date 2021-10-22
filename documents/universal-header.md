@@ -1,7 +1,9 @@
 ---
 title: Universal Header
 parent: Reusable Designs
-description: this is required
+description: The Universal Header shows users that they are on a U-M Library
+  website and provides a quick and organized way for users to access other
+  library websites.
 builder:
   - type: Markdown
     markdown: "## Hello World!"
