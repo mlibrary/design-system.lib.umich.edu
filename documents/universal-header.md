@@ -9,12 +9,6 @@ builder:
     code:
       code: <m-universal-header></m-universal-header>
   - type: Color
-  - type: markdown
-    markdown: >+
-      The Universal Header shows users that they are on a U-M Library website
-      and provides a quick and organized way for users to access other library
-      websites.
-
   - type: code
     code:
       code: <m-universal-header></m-universal-header>
@@ -39,9 +33,4 @@ builder:
 
       - Design System
 ---
-
-TODO
-
-Testing how editing an existing page works with workflows and stuff.
-
-what happen if i do this now...
+The Universal Header shows users that they are on a U-M Library website and provides a quick and organized way for users to access other library websites.
