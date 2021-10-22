@@ -4,10 +4,11 @@ parent: Reusable Designs
 description: this is required
 builder:
   - type: Markdown
-    Markdown: Hello World!
+    markdown: '## Hello World!'
   - type: Code
-    Code:
+    code:
       code: <m-universal-header></m-universal-header>
+  - type: Color
 ---
 
 TODO

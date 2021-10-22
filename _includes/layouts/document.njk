@@ -10,10 +10,130 @@ layout: layouts/base.njk
       {{ layoutContent | safe }}
 
       {%- for item in builder %}
-        {% if item.type === 'Code' %}
-          <p>TODO: Add Code builder logic.</p>
-        {% elif item.type === 'Markdown' %}
-          <p>TODO: Add Markdown builder logic.</p>
+        {% if item.type | lower === 'code' %}
+          <style>
+            .code-rendered {
+              padding: var(--space-large);
+              border: solid 1px var(--color-neutral-100);
+              border-radius: 4px 4px 0 0;
+
+              background-image: linear-gradient(45deg,var(--color-blue-100) 25%,transparent 25%),linear-gradient(135deg,var(--color-blue-100) 25%,transparent 25%),linear-gradient(45deg,transparent 75%,var(--color-blue-100) 75%),linear-gradient(135deg,transparent 75%,var(--color-blue-100) 75%);
+              background-size: 24px 24px;
+              background-position: 0 0,12px 0,12px -12px,0 12px;
+            }
+
+            .code-rendered > h3,
+            .code-source > h3 {
+              margin-top: 0;
+              color: var(--color-neutral-400);
+
+              text-decoration: underline;
+              text-decoration-style: wavy;
+              text-underline-offset: 3px;
+              text-decoration-thickness: 2px;
+              text-decoration-color: var(--color-maize-400);
+            }
+
+            .code-source {
+              padding: var(--space-large);
+              border: solid 1px var(--color-neutral-100);
+              border-top: none;
+              background: var(--color-blue-100);
+
+              border-radius: 0 0 4px 4px;
+            }
+
+            .code-source > pre {
+              margin-bottom: 0;
+            }
+
+            button {
+              margin: 0;
+            }
+          </style>
+          <div class="code-rendered">
+            <h3 class="subtle-heading">Preview</h3>
+            {{ item.code.code | safe }}
+          </div>
+          <div class="code-source">
+            <h3 class="subtle-heading">HTML</h3>
+            {% highlight "html" %}
+            {{ item.code.code | safe }}
+            {% endhighlight %}
+          </div>
+
+          <form action="https://codepen.io/pen/define" method="POST" target="_blank">
+            <input
+            type="hidden"
+            name="data"
+            value='{
+              "title": "{{ title }} — Design System — University of Michigan Library",
+              "html": "{{ metadata.codepen | safe | replace('"', '\\"') | replace('\'', '&#39;') | replace('\n', '\\n')}} {{ item.code.code | safe | replace('"', '\\"') | replace('\'', '&#39;') | replace('\n', '\\n') }}",
+              "css_external": "https://unpkg.com/@umich-lib/web@v1/umich-lib.css",
+              "layout": "left",
+              "editors": "100"
+            }'/>
+            <input type="submit" value="Open in CodePen" style="margin: 0; margin-top: var(--space-small);"
+            class="button" />
+          </form>
+
+        {% elif item.type | lower === 'markdown' %}
+          {% markdown %}{{ item.markdown }}{% endmarkdown %}
+        {% elif item.type | lower === 'color' %}
+          <section class="color-palettes">
+            <style>
+              .color-palettes {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+                gap: var(--space-medium);
+                margin-top: var(--space-xx-large);
+              }
+              .color-palette ol {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+              }
+              .color-palette li {
+                padding: var(--space-medium);
+                margin: 0;
+                display: flex;
+                justify-content: space-between;
+              }
+              /* COLOR TOKENS */
+              #color-orange-400 {
+                color: var(--color-neutral-500);
+              }
+              #color-blue-300,
+              #color-blue-400,
+              #color-blue-500,
+              #color-green-500,
+              #color-indigo-400,
+              #color-indigo-500,
+              #color-neutral-300,
+              #color-neutral-400,
+              #color-neutral-500,
+              #color-orange-500,
+              #color-pink-400,
+              #color-pink-500,
+              #color-teal-400,
+              #color-teal-500 {
+                color: white;
+              }
+            </style>
+            {% for palette, color_palette in color | groupby("meta.palette") %}
+              <div class="color-palette">
+                <h3 class="visually-hidden">{{ palette }}</h3>
+                <ol>
+                  {% for token in color_palette %}
+                    <li style="background: var(--{{token.name}});" id="{{token.name}}">
+                      <code>var(--{{token.name}})</code>
+                      <code>{{token.value}}</code>
+                    </li>
+                  {% endfor %}
+                </ol>
+              </div>
+            {% endfor %}
+          </section>
         {% endif %}
       {%- endfor -%}
     </div>
