@@ -5,12 +5,6 @@ description: The Universal Header shows users that they are on a U-M Library
   website and provides a quick and organized way for users to access other
   library websites.
 builder:
-  - type: Markdown
-    markdown: "## Hello World!"
-  - type: Code
-    code:
-      code: <m-universal-header></m-universal-header>
-  - type: Color
   - type: code
     code:
       code: <m-universal-header></m-universal-header>
