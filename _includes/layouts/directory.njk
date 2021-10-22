@@ -8,10 +8,10 @@ layout: layouts/document.njk
 
 <ul class="page-previews" style="margin-top: var(--space-xx-large);">
   {%- for entry in pages %}
-    <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
+    <li>
       <a href="{{ entry.url | url }}">
         <h3>{{ entry.title }}</h3>
-        <p>{{entry.excerpt}}</p>
+        <p>{{ entry.description }}</p>
       </a>
     </li>
   {%- endfor %}

@@ -8,6 +8,14 @@ layout: layouts/base.njk
 
     <div class="page-content prose" style="grid-area: grouping;">
       {{ layoutContent | safe }}
+
+      {%- for item in builder %}
+        {% if item.type === 'Code' %}
+          <p>TODO: Add Code builder logic.</p>
+        {% elif item.type === 'Markdown' %}
+          <p>TODO: Add Markdown builder logic.</p>
+        {% endif %}
+      {%- endfor -%}
     </div>
 
     <!-- 
@@ -30,7 +38,7 @@ layout: layouts/base.njk
     <nav aria-labelled-by="neighbors-heading" class="aside-nav">
       <h2 class="subtle-heading">{{ parent }}</h2>
 
-      {% set documents = collections.all | eleventyNavigation(parent) %}
+      {% set documents = collections.all | eleventyNavigation(parent | title) %}
 
       <ol>
         {%- for document in documents %}
