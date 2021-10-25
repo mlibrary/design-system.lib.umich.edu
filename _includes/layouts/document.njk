@@ -12,6 +12,11 @@ layout: layouts/base.njk
       {%- for item in builder %}
         {% if item.type | lower === 'code' %}
           <style>
+            .code-rendered,
+            .code-source {
+              margin: 0 calc(-1 * var(--space-large));
+            }
+
             .code-rendered {
               padding: var(--space-large);
               border: solid 1px var(--color-neutral-100);
@@ -22,29 +27,17 @@ layout: layouts/base.njk
               background-position: 0 0,12px 0,12px -12px,0 12px;
             }
 
-            .code-rendered > h3,
-            .code-source > h3 {
-              margin-top: 0;
-              color: var(--color-neutral-400);
-
-              text-decoration: underline;
-              text-decoration-style: wavy;
-              text-underline-offset: 3px;
-              text-decoration-thickness: 2px;
-              text-decoration-color: var(--color-maize-400);
-            }
-
             .code-source {
               padding: var(--space-large);
-              border: solid 1px var(--color-neutral-100);
+              border: solid 1px var(--color-neutral-500);
               border-top: none;
-              background: var(--color-blue-100);
-
+              background: var(--color-neutral-400);
+              color: var(--color-neutral-100);
               border-radius: 0 0 4px 4px;
             }
 
             .code-source > pre {
-              margin-bottom: 0;
+              margin: 0;
             }
 
             button {
@@ -52,11 +45,9 @@ layout: layouts/base.njk
             }
           </style>
           <div class="code-rendered">
-            <h3 class="subtle-heading">Preview</h3>
             {{ item.code.code | safe }}
           </div>
           <div class="code-source">
-            <h3 class="subtle-heading">HTML</h3>
             {% highlight "html" %}
             {{ item.code.code | safe }}
             {% endhighlight %}

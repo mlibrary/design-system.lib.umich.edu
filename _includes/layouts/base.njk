@@ -5,7 +5,9 @@
     <link rel="dns-prefetch" href="https://identity.netlify.com">
     <link href="https://unpkg.com/@umich-lib/web@1/umich-lib.css" rel="stylesheet"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ renderData.title or title or metadata.title }}︱Design System</title>
+    <title>{{ renderData.title or title or metadata.title }}
+      {{ metadata.name }}
+    </title>
     <meta name="description" content="{{ metaDescription or renderData.metaDescription or metadata.description }}">
     <link rel="icon" href="/static/img/favicon-32x32.png" type="image/png"/>
 
@@ -28,7 +30,7 @@
     </style>
 
     <m-universal-header></m-universal-header>
-    <m-website-header name="Design System"></m-website-header>
+    <m-website-header name="{{ metadata.name }} "></m-website-header>
 
     <nav aria-label="main" class="menu-nav" style="margin-top: var(--space-x-small); border-bottom: solid 2px var(--color-neutral-100);">
       {% set documents = collections.all | eleventyNavigation("Hello") %}
