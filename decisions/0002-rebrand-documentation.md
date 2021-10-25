@@ -6,13 +6,12 @@ The "Design System" terminology has been confusing with people outside the Libra
 
 ## Decisions
 
-https://spg.umich.edu/about/about-this-website
+We would be better served naming this website with words our audience (library employees) is familiar with.
 
-We would be better served naming this website with words our audience is familiar with. This website recommendation guidelines and recommendations for standard web design practices at the library.
+"Web Design Standard Practice Guide"
+"Web Design SPG"
 
-"Website Standard Practice Guide"
-
-This SPG would provide guides for employees to meet our commitment to
+The website serves to provide guidelines for employees to meet our commitment to
 
 - making digital services and [spaces welcoming and affirming to all](https://www.lib.umich.edu/about-us/about-library/diversity-equity-inclusion-and-accessibility)
 - meet our responsibility to legal, good industry practice, and library best practices
@@ -22,6 +21,9 @@ This decision was informed by the [GOV UK Naming your service guide](https://www
 - describe a task, not a technology
 - don’t need to change when policy or technology changes
 - are verbs, not nouns
+
+What is a SPG?
+https://spg.umich.edu/about/about-this-website
 
 ## Status
 
