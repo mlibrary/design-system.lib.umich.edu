@@ -10,7 +10,7 @@ https://spg.umich.edu/about/about-this-website
 
 We would be better served naming this website that documents our recommendations for good web design practices at the library.
 
-"Web Design Standard Practice Guide"
+"Website Standard Practice Guide"
 
 This SPG would provide guides for employees to meet our commitment to
 
