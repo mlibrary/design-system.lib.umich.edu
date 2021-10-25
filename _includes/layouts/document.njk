@@ -12,11 +12,6 @@ layout: layouts/base.njk
       {%- for item in builder %}
         {% if item.type | lower === 'code' %}
           <style>
-            .code-rendered,
-            .code-source {
-              margin: 0 calc(-1 * var(--space-large));
-            }
-
             .code-rendered {
               padding: var(--space-large);
               border: solid 1px var(--color-neutral-100);
