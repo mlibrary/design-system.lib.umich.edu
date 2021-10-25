@@ -8,7 +8,7 @@ The "Design System" terminology has been confusing with people outside the Libra
 
 https://spg.umich.edu/about/about-this-website
 
-We would be better served naming this website that documents our recommendations for good web design practices at the library.
+We would be better served naming this website with words our audience is familiar with. This website recommendation guidelines and recommendations for standard web design practices at the library.
 
 "Website Standard Practice Guide"
 
