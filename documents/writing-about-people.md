@@ -17,7 +17,7 @@ This includes people who:
 * Use assistive technologies 
 * Are guests or visitors, who may not have authentication privileges
 
-One reason we use <plain language> and follow <accessibility principles> is to make sure we’re doing our best to reach everyone who wants to use our spaces and services. 
+One reason we use plain language and follow accessibility principles is to make sure we’re doing our best to reach everyone who wants to use our spaces and services. 
 
 And remember, no one person represents a group. Be careful not to make assumptions about the people you’re addressing.
 
