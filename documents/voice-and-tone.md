@@ -21,8 +21,8 @@ It does not focus on the library as an organization or its accolades. 
 * Be human — write conversationally.
 * Use an active voice.
 * Use inclusive language. 
-* Do not assume your audience is only made up of a certain group of people who all understand the technical terms you use.
-* Avoid specialist terms unless you also help users understand what they mean in plain English.
+* Don't assume your audience will understand the technical terms you use.
+* Avoid specialist terms, unless you tell users what they mean in plain English.
 
 ## Helpful
 
